@@ -22,7 +22,7 @@
 		if($check['sesion_id'] == $sesion_id) { 
 			$update = mysql_fetch_assoc(@mysql_query("SELECT `sesion_url` FROM `robocza` WHERE `sesion_id` = '$sesion_id'"));
 			$add_url = $update['sesion_url']."::".$url;
-			$ins = @mysql_query("UPDATE `robocza` SET `sesion_url` = '$add_url' WHERE `sesion_id` = '$sesion_id'");
+			$ins = @mysql_query("UPDATE `sesions` SET `sesion_url` = '$add_url' WHERE `sesion_id` = '$sesion_id'");
 				if($ins)
 					header('location:/pixel/cont.js');
 		}else {
